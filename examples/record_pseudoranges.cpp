@@ -184,19 +184,19 @@ int main(int argc, char **argv)
 
     // Set Callback for pseudorange data
     my_gps.set_rxm_raw_callback(PseudorangeData);
-    my_gps.set_nav_clock_callback(ClockData);
+    //my_gps.set_nav_clock_callback(ClockData);
     my_gps.set_parsed_ephem_callback(ParsedEphems);
-    my_gps.set_nav_solution_callback(NavData);
+   // my_gps.set_nav_solution_callback(NavData);
 
     //! Configure ublox
     // request pseudorange data
     my_gps.ConfigureMessageRate(0x02,0x10,1);
     // nav clock data
-    my_gps.ConfigureMessageRate(0x01,0x22,1);
+        //my_gps.ConfigureMessageRate(0x01,0x22,1);
     // nav clock data
     my_gps.ConfigureMessageRate(0x0B,0x31,1);
     // nav solution data
-    my_gps.ConfigureMessageRate(0x01,0x06,1);
+        //my_gps.ConfigureMessageRate(0x01,0x06,1);
     
     // loop forever
     while(1)
