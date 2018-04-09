@@ -1,7 +1,7 @@
 #include "ublox/ublox.h"
 #include <iostream>
 #include <fstream>
-
+#include "ublox/calc_position.h"
 // #include "boost/filesystem.hpp"
 
 using namespace ublox;
@@ -10,7 +10,7 @@ using namespace std;
 
 ofstream data_file_;  //!< file stream for logging gps data
 std::string data_filename_; //!< file name for logging gps data
-
+Position myPos = Position("hello");
 bool StartDataLogging(std::string filename) {
     try {
 
@@ -36,10 +36,13 @@ bool StartDataLogging(std::string filename) {
 void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
     try {
 
+
+        
         data_file_ << fixed << "RANGE" << "\t" << (signed long)raw_meas.iTow;
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid
                         << "\t" << setprecision(3) << raw_meas.rawmeasreap[ii].psuedorange; // m
+
         }
         data_file_ << std::endl;
         data_file_ << fixed << "CARRIER" << "\t" << (signed long)raw_meas.iTow;
@@ -48,10 +51,22 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
             << "\t" << setprecision(3) << raw_meas.rawmeasreap[ii].carrier_phase; // m
         }
         data_file_ << std::endl;
-        data_file_ << fixed << "DOPPLER" << "\t" << (signed long)raw_meas.iTow;
+        data_file_ << fixed << "DOPPLER" << "\t" << (double)raw_meas.iTow;
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid
             << "\t" << setprecision(3) << raw_meas.rawmeasreap[ii].doppler; // m
+            if(myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid))
+            {
+                double calcDoppler = myPos.calcDoppler(raw_meas.rawmeasreap[ii].svid, (double)raw_meas.iTow);
+                double measDoppler = raw_meas.rawmeasreap[ii].doppler;
+                cout<<"calc: "<<calcDoppler<<"\tmeasured: "<<measDoppler
+                <<"\tError"<<calcDoppler - measDoppler<<endl;
+            }
+            else
+            {
+                cout<<" No ephemerisExists "<<endl;
+            }
+            //cout<<myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid)<<endl;
         }
         data_file_ << std::endl;
         data_file_ << fixed << "CNO" << "\t" << (signed long)raw_meas.iTow;
@@ -95,6 +110,7 @@ void ClockData(ublox::NavClock nav_clock, double time_stamp) {
 
 void ParsedEphems(ublox::ParsedEphemData parsed_ephem_data, double time_stamp) {
     try{
+        myPos.addEphemeris(parsed_ephem_data);
         data_file_  << fixed << "Ephemerides" << "\t" << (signed long)parsed_ephem_data.tow;
         data_file_  << setprecision(15) << "\t" << parsed_ephem_data.prn
                     << "\t" << parsed_ephem_data.tgd
@@ -127,6 +143,8 @@ void ParsedEphems(ublox::ParsedEphemData parsed_ephem_data, double time_stamp) {
 
 void NavData(ublox::NavSol nav_data, double time_stamp) {
     try{
+        myPos.setCoords(nav_data.ecefX/100,nav_data.ecefY/100,nav_data.ecefZ/100);
+        cout<<"position defined"<<endl;
         data_file_  << fixed << "Position" << "\t" << (signed long) nav_data.iTOW;
         data_file_  << setprecision(12) << "\t" << nav_data.ecefX/100.
                     << "\t" << nav_data.ecefY/100.
@@ -186,7 +204,7 @@ int main(int argc, char **argv)
     my_gps.set_rxm_raw_callback(PseudorangeData);
     //my_gps.set_nav_clock_callback(ClockData);
     my_gps.set_parsed_ephem_callback(ParsedEphems);
-   // my_gps.set_nav_solution_callback(NavData);
+    my_gps.set_nav_solution_callback(NavData);
 
     //! Configure ublox
     // request pseudorange data
@@ -196,7 +214,7 @@ int main(int argc, char **argv)
     // nav clock data
     my_gps.ConfigureMessageRate(0x0B,0x31,1);
     // nav solution data
-        //my_gps.ConfigureMessageRate(0x01,0x06,1);
+    my_gps.ConfigureMessageRate(0x01,0x06,1);
     
     // loop forever
     while(1)

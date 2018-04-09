@@ -1410,16 +1410,16 @@ void Ublox::ParseLog(uint8_t *log, size_t logID) {
             ublox::RawMeas cur_raw_meas;
 
             payload_length = (((uint16_t) *(log+5)) << 8) + ((uint16_t) *(log+4)); // payload_length = 8+24*numSV
-			num_of_svs = (uint8_t) *(log+12);
+			num_of_svs = (uint8_t) *(log+17);
 
 			// Copy portion of RXM-SVSI before repeated block (8 + header length)
-			memcpy(&cur_raw_meas, log, 6+8);
+			memcpy(&cur_raw_meas, log, 6+16);
 			// Copy repeated block
 			for (uint8_t index = 0; index < num_of_svs; index++) {
-				memcpy(&cur_raw_meas.rawmeasreap[index],log+14+(index*24),24);
+				memcpy(&cur_raw_meas.rawmeasreap[index],log+22+(index*32),32);
 			}
 			// Copy Checksum
-			memcpy(&cur_raw_meas.checksum, log+14+(24*num_of_svs), 2);
+			memcpy(&cur_raw_meas.checksum, log+22+(32*num_of_svs), 2);
 
             if (rxm_raw_callback_)
                 rxm_raw_callback_(cur_raw_meas, read_timestamp_);

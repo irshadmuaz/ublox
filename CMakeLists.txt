@@ -81,10 +81,9 @@ endif(BUILD_WITH_ROS)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 # Add default source files
-set(UBLOX_SRCS src/ublox.cpp)
+set(UBLOX_SRCS src/ublox.cpp src/calc_position.cpp)
 # Add default header files
-set(UBLOX_HEADERS include/ublox/ublox.h
-                  include/ublox/ublox_structures.h)
+set(UBLOX_HEADERS include/ublox/ublox.h include/ublox/ublox_structures.h include/ublox/calc_position.h)
 
 # Find Boost, if it hasn't already been found
 #set(Boost_USE_STATIC_LIBS ON)
@@ -154,6 +153,7 @@ IF(NOT UBLOX_DONT_CONFIGURE_INSTALL AND NOT BUILD_WITH_ROS)
   )
   
   INSTALL(FILES include/ublox/ublox.h include/ublox/ublox_structures.h
+		include/ublox/calc_position.h
           DESTINATION include/ublox)
   
   IF(NOT CMAKE_FIND_INSTALL_PATH)

@@ -102,7 +102,7 @@ namespace ublox {
     #define MSG_ID_RXM_ALM 0x30
     #define MSG_ID_RXM_EPH 0x31
     #define MSG_ID_RXM_PMREQ 0x41
-    #define MSG_ID_RXM_RAW 0x10
+    #define MSG_ID_RXM_RAW 0x15
     #define MSG_ID_RXM_SFRB 0x11
     #define MSG_ID_RXM_SVSI 0x20
 #define MSG_CLASS_TIM 0x0D
@@ -305,7 +305,14 @@ PACK(
         uint32_t reserved2;
         uint8_t checksum[2];
 });
-
+PACK(
+    struct  ecef
+    {
+        int32_t ecefX;
+        int32_t ecefY;
+        int32_t ecefZ;
+        bool defined;
+    });
 
 /*!
 * NAV-POSLLH Message Structure
@@ -680,22 +687,34 @@ PACK(
 //#define RXMRAW_QUALITY_PR_DOP_CP_GOOD 4 // Min value for pseudorange, doppler, and carrier phase to be good
 PACK(
     struct RawMeasReap{
-        double carrier_phase;           // cycles - Carrier Phase measurement
         double psuedorange;             // m - Psuedorange measurement
+        double carrier_phase;           // cycles - Carrier Phase measurement
+        
         float doppler;                  // Hz - Doppler Measurement
+        uint8_t gnssId;                 //GNSS Identifier
         uint8_t svid;                   // SV Number
-        int8_t quality;                 // Nav Measurement Quality Indicator  -- (>=4 PR+DO OK) (>=5 PR+DO+CP OK) (<6 likel loss carrier lock)
+        uint8_t reserved2;
+        uint8_t freqId;                 //Used for glonass
+        uint16_t locktime;              //carrier phase locktime counter max 64500ms
+        //int8_t quality;                 // Nav Measurement Quality Indicator  -- (>=4 PR+DO OK) (>=5 PR+DO+CP OK) (<6 likel loss carrier lock)
         int8_t cno;                     // dbHz - Carrier to Noise Ratio
+        uint8_t prStdev;                //estimated pseudorange measurement standard deviation
+        uint8_t cpStdev;                //estimated carrier phase standard deviation
+        uint8_t doStdev;                //estimated doppler measurement standard deviation
         uint8_t loss_of_lock_indicator; // Loss of Lock Indicator (RINEX Definition)
+        uint8_t reserved3;
+
 });
 
 PACK(
     struct RawMeas{
         UbloxHeader header;
-        int32_t iTow;   // ms - Time of Week
-        int16_t week;   // weeks
-        uint8_t numSV;  // # of SVs following
-        uint8_t reserved;
+        double iTow; //rcvTow 8
+        uint16_t week; // weeks 2
+        int8_t leapsecs;// leapsecs 1
+        uint8_t numSV; // numsv byte 1
+        uint8_t recStat; //rec stat bit field 1
+        uint8_t reserved1[3]; //reserved 3
         RawMeasReap rawmeasreap[MAX_SAT];
         uint8_t checksum[2];
 });
@@ -771,7 +790,7 @@ enum Message_ID
     AID_HUI = 2818,                 // (ID 0x0B 0x02) GPS Health, Ionospheric, UTC
     AID_INI = 2817,                 // (ID 0x0B 0x01) Position, Time, Frequency, Clock Drift
     MON_VER = 2564,                 // (ID 0x0A 0x04) Reciever/Software/ROM Version
-    RXM_RAW = 528,                  // (ID 0x02 0x10) Raw DGPS Data
+    RXM_RAW = 533,                  // (ID 0x02 0x15) Raw DGPS Data
     RXM_SFRB = 529,                 // (ID 0x02 0x11) GPS Subframe Data
     RXM_SVSI = 544,                 // (ID 0x02 0x20) SV Status Info
 };
