@@ -16,6 +16,10 @@ Position::Position(string name)
 {
 	this->name = name;
 	this->coords.defined = false;
+	for(int i=0;i<sizeof(this->dopplers)/sizeof(*(this->dopplers));i++)
+	{
+		this->dopplers[i] = 0.0;
+	}
 
 }
 string Position::getName()

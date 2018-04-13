@@ -29,4 +29,5 @@ public:
 	double calcDoppler(int id, double _time);
 	double calcDistance(ecef satPos);
 	void setCoords(double x, double y, double z);
+	double dopplers[50];
 };

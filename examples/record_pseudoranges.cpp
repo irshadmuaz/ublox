@@ -10,23 +10,28 @@ using namespace std;
 
 ofstream data_file_;  //!< file stream for logging gps data
 std::string data_filename_; //!< file name for logging gps data
+ofstream doppler_file_; //file stream for logging doppler and calculated doppler
+std::string doppler_filename; //file name for logging doppler and calculated doppler
 Position myPos = Position("hello");
 bool StartDataLogging(std::string filename) {
     try {
 
         data_filename_ = filename;
+        doppler_filename = filename + "_doppler";
         
         // open file and add header
         data_file_.open(data_filename_.c_str());
-
+        doppler_file_.open(doppler_filename.c_str());
         // write header
         data_file_ << "%%RANGE  1) GPS Time(ms) 2) SVID  3) Pseudorange (m)  4) SVID  5) Pseudorange ..." << std::endl;
         data_file_ << "%%CLOCK  1) GPS Time(ms) 2) ClockBias(nsec) 3) ClkDrift(nsec/sec) 4) TimeAccuracyEstimate(nsec) 5) FreqAccuracyEstimate(ps/s)" << std::endl;
-
+        doppler_file_ << "%%Doppler  1) GPS Time(ms) 2) SVID  3) Measured Doppler (m)  4) SVID  5) Calculated Doppler 6) Differential ..." << std::endl;
     } catch (std::exception &e) {
         std::cout << "Error opening log file: " << e.what();
         if (data_file_.is_open())
             data_file_.close();
+        if(doppler_file_.is_open())
+            doppler_file_.close();
         return false;
     }
     std::cout << "Started Data Log" << std::endl;
@@ -52,15 +57,21 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
         }
         data_file_ << std::endl;
         data_file_ << fixed << "DOPPLER" << "\t" << (double)raw_meas.iTow;
+
+        
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid
             << "\t" << setprecision(3) << raw_meas.rawmeasreap[ii].doppler; // m
             if(myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid))
             {
+                int svid = (unsigned int)raw_meas.rawmeasreap[ii].svid;
                 double calcDoppler = myPos.calcDoppler(raw_meas.rawmeasreap[ii].svid, (double)raw_meas.iTow);
                 double measDoppler = raw_meas.rawmeasreap[ii].doppler;
+                doppler_file_ << fixed << " DOPPLER" << "\t" << (double)raw_meas.iTow;
+                doppler_file_  << "\t" << svid << "\t" << setprecision(3) << measDoppler<<  "\t" << setprecision(3) << calcDoppler<<"\t"<<measDoppler - myPos.dopplers[svid]<<endl; // m
                 cout<<"calc: "<<calcDoppler<<"\tmeasured: "<<measDoppler
-                <<"\tError"<<calcDoppler - measDoppler<<endl;
+                <<"\tError"<<calcDoppler - measDoppler<<"\tDifferential "<< measDoppler - myPos.dopplers[svid]<<endl;
+                myPos.dopplers[svid] = measDoppler;
             }
             else
             {
@@ -69,6 +80,7 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
             //cout<<myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid)<<endl;
         }
         data_file_ << std::endl;
+        doppler_file_<<std::endl;
         data_file_ << fixed << "CNO" << "\t" << (signed long)raw_meas.iTow;
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid
@@ -171,6 +183,8 @@ void NavData(ublox::NavSol nav_data, double time_stamp) {
 void StopLoggingData() {
     if (data_file_.is_open())
         data_file_.close();
+    if (doppler_file_.is_open())
+        doppler_file_.close();
 }
 
 int main(int argc, char **argv)
