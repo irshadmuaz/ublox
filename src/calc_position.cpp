@@ -19,6 +19,7 @@ Position::Position(string name)
 	for(int i=0;i<sizeof(this->dopplers)/sizeof(*(this->dopplers));i++)
 	{
 		this->dopplers[i] = 0.0;
+		this->calcDopplers[i] = 0.0;
 	}
 
 }
@@ -130,23 +131,6 @@ ecef Position::calcPosition(int id,double _time)
 	c.ecefY = yk;
 	c.ecefZ = zk;
 	return c;
-	
-	//Results follow.
-
-	//printf("BCpos: t, xk, yk, zk: %9.3Lf %21.11Lf %21.11Lf %21.11Lf\n", t, xk, yk, zk );
-	//BCpos: t, xk, yk, zk: 86400.000 -12611434.19782218519 -13413103.97797041226  19062913.07357876760
-	//printf("BCvel: t, Vxk, Vyk, Vzk: %9.3Lf %16.10Lf %16.10Lf %16.10Lf\n", t, xkdot, ykdot, zkdot );
-	//BCvel: t, Vxk, Vyk, Vzk: 86400.000   266.2803795674 -2424.7683468482 -1529.7620784616
-
-	//Use the positions at 86400.000+0.005 and 86400.000-0.005 for numerical computation check.
-	//Perfect agreement is precluded because we have a limited precision machine.
-	//printf("xdotnumerical.01: %20.12lf\n", (-12611432.86642217014 - (-12611435.52922596496) )/0.01 );
-	//xdotnumerical.01:     266.280379332602
-	//printf("ydotnumerical.01: %20.12lf\n", (-13413116.10180993562 - (-13413091.85412646334) )/0.01 );
-	//ydotnumerical.01:   -2424.768347293139
-	//printf("zdotnumerical.01: %20.12lf\n", ( 19062905.42476327563 - ( 19062920.72238405509) )/0.01 );
-	//zdotnumerical.01:   -1529.762077704072
-
 }
 double Position::calcDistance(ecef satPos)
 {

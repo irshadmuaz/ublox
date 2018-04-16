@@ -30,4 +30,5 @@ public:
 	double calcDistance(ecef satPos);
 	void setCoords(double x, double y, double z);
 	double dopplers[50];
+	double calcDopplers[50];
 };

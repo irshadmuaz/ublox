@@ -68,10 +68,12 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
                 double calcDoppler = myPos.calcDoppler(raw_meas.rawmeasreap[ii].svid, (double)raw_meas.iTow);
                 double measDoppler = raw_meas.rawmeasreap[ii].doppler;
                 doppler_file_ << fixed << " DOPPLER" << "\t" << (double)raw_meas.iTow;
-                doppler_file_  << "\t" << svid << "\t" << setprecision(3) << measDoppler<<  "\t" << setprecision(3) << calcDoppler<<"\t"<<measDoppler - myPos.dopplers[svid]<<endl; // m
+                doppler_file_  << "\t" << svid << "\t" << setprecision(3) << measDoppler<<  "\t" 
+                << setprecision(3) << calcDoppler<<"\t"<<measDoppler - myPos.dopplers[svid]<<"\t"<<calcDoppler - myPos.calcDopplers[svid]<<endl; // m
                 cout<<"calc: "<<calcDoppler<<"\tmeasured: "<<measDoppler
                 <<"\tError"<<calcDoppler - measDoppler<<"\tDifferential "<< measDoppler - myPos.dopplers[svid]<<endl;
                 myPos.dopplers[svid] = measDoppler;
+                myPos.calcDopplers[svid] = calcDoppler;
             }
             else
             {
