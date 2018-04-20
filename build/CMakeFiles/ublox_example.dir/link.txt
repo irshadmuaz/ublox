@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/ublox_example.dir/examples/ublox_example.o  -o ../bin/ublox_example -rdynamic ../lib/libublox.a /usr/local/lib/libserial.a -lrt -lboost_system -lboost_thread 

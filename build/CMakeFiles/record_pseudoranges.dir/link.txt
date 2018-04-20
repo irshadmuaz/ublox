@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/record_pseudoranges.dir/examples/record_pseudoranges.o  -o ../bin/record_pseudoranges -rdynamic ../lib/libublox.a /usr/local/lib/libserial.a -lrt -lboost_system -lboost_thread 

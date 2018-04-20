@@ -1,0 +1,11 @@
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/install.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/record_pseudoranges.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/uninstall.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox_example.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/assist_example.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/install/local.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/edit_cache.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/rebuild_cache.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/install/strip.dir
+/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/list_install_components.dir

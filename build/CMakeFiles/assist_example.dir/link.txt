@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/assist_example.dir/examples/assist_example.o  -o ../bin/assist_example -rdynamic ../lib/libublox.a /usr/local/lib/libserial.a -lrt -lboost_system -lboost_thread 

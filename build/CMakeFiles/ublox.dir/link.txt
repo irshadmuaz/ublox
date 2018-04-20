@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../lib/libublox.a  CMakeFiles/ublox.dir/src/ublox.o CMakeFiles/ublox.dir/src/calc_position.o
+/usr/bin/ranlib ../lib/libublox.a
