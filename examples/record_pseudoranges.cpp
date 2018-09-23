@@ -62,7 +62,12 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid
             << "\t" << setprecision(3) << raw_meas.rawmeasreap[ii].doppler; // m
-            if(myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid))
+
+            if (raw_meas.rawmeasreap[ii].gnssId)
+            {
+                cout<<"Non-GPS Constellation"<<endl;
+            }
+            else if(myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid))
             {
                 int svid = (unsigned int)raw_meas.rawmeasreap[ii].svid;
                 double calcDoppler = myPos.calcDoppler(raw_meas.rawmeasreap[ii].svid, (double)raw_meas.iTow);
@@ -75,10 +80,6 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
                 myPos.dopplers[svid] = measDoppler;
                 myPos.calcDopplers[svid] = calcDoppler;
 
-            }
-            else if (raw_meas.rawmeasreap[ii].gnssId)
-            {
-                cout<<"Non-GPS Constellation"<<endl;
             }
             else
             {
