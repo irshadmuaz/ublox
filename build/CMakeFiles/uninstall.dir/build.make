@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/muaz/Desktop/GPS-PVT/ublox
+CMAKE_SOURCE_DIR = /home/muaz/Desktop/ublox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/muaz/Desktop/GPS-PVT/ublox/build
+CMAKE_BINARY_DIR = /home/muaz/Desktop/ublox/build
 
 # Utility rule file for uninstall.
 
@@ -72,6 +72,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/muaz/Desktop/GPS-PVT/ublox/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/muaz/Desktop/GPS-PVT/ublox /home/muaz/Desktop/GPS-PVT/ublox /home/muaz/Desktop/GPS-PVT/ublox/build /home/muaz/Desktop/GPS-PVT/ublox/build /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/muaz/Desktop/ublox/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/muaz/Desktop/ublox /home/muaz/Desktop/ublox /home/muaz/Desktop/ublox/build /home/muaz/Desktop/ublox/build /home/muaz/Desktop/ublox/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

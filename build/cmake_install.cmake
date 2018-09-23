@@ -1,4 +1,4 @@
-# Install script for directory: /home/muaz/Desktop/GPS-PVT/ublox
+# Install script for directory: /home/muaz/Desktop/ublox
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,14 +33,14 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/muaz/Desktop/GPS-PVT/ublox/lib/libublox.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/muaz/Desktop/ublox/lib/libublox.a")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ublox" TYPE FILE FILES
-    "/home/muaz/Desktop/GPS-PVT/ublox/include/ublox/ublox.h"
-    "/home/muaz/Desktop/GPS-PVT/ublox/include/ublox/ublox_structures.h"
-    "/home/muaz/Desktop/GPS-PVT/ublox/include/ublox/calc_position.h"
+    "/home/muaz/Desktop/ublox/include/ublox/ublox.h"
+    "/home/muaz/Desktop/ublox/include/ublox/ublox_structures.h"
+    "/home/muaz/Desktop/ublox/include/ublox/calc_position.h"
     )
 endif()
 
@@ -53,7 +53,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/share/cmake-3.5/Modules" TYPE FILE FILES "/home/muaz/Desktop/GPS-PVT/ublox/Findublox.cmake")
+file(INSTALL DESTINATION "/usr/share/cmake-3.5/Modules" TYPE FILE FILES "/home/muaz/Desktop/ublox/Findublox.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -64,5 +64,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/muaz/Desktop/GPS-PVT/ublox/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/muaz/Desktop/ublox/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

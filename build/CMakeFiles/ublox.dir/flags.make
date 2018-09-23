@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include -I/home/muaz/Desktop/GPS-PVT/ublox/include 
+CXX_INCLUDES = -I/usr/local/include -I/home/muaz/Desktop/ublox/include 
 

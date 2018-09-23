@@ -5,6 +5,6 @@ CMakeFiles/record_pseudoranges.dir/examples/record_pseudoranges.o
  ../include/ublox/calc_position.h
  ../include/ublox/ublox.h
  ../include/ublox/ublox_structures.h
- /home/muaz/Desktop/GPS-PVT/ublox/examples/record_pseudoranges.cpp
+ /home/muaz/Desktop/ublox/examples/record_pseudoranges.cpp
  /usr/local/include/serial/serial.h
  /usr/local/include/serial/v8stdint.h

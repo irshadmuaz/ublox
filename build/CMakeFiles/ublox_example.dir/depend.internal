@@ -4,6 +4,6 @@
 CMakeFiles/ublox_example.dir/examples/ublox_example.o
  ../include/ublox/ublox.h
  ../include/ublox/ublox_structures.h
- /home/muaz/Desktop/GPS-PVT/ublox/examples/ublox_example.cpp
+ /home/muaz/Desktop/ublox/examples/ublox_example.cpp
  /usr/local/include/serial/serial.h
  /usr/local/include/serial/v8stdint.h

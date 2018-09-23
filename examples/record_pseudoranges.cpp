@@ -25,7 +25,7 @@ bool StartDataLogging(std::string filename) {
         // write header
         data_file_ << "%%RANGE  1) GPS Time(ms) 2) SVID  3) Pseudorange (m)  4) SVID  5) Pseudorange ..." << std::endl;
         data_file_ << "%%CLOCK  1) GPS Time(ms) 2) ClockBias(nsec) 3) ClkDrift(nsec/sec) 4) TimeAccuracyEstimate(nsec) 5) FreqAccuracyEstimate(ps/s)" << std::endl;
-        doppler_file_ << "%%Doppler  1) GPS Time(ms) 2) SVID  3) Measured Doppler (m)  4) SVID  5) Calculated Doppler 6) Differential ..." << std::endl;
+        doppler_file_ << "%%Doppler\tTime(ms)\tSVID\tMeasured\tCalculated\tError(hz)\tDifferential" << std::endl;
     } catch (std::exception &e) {
         std::cout << "Error opening log file: " << e.what();
         if (data_file_.is_open())
@@ -69,11 +69,16 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
                 double measDoppler = raw_meas.rawmeasreap[ii].doppler;
                 doppler_file_ << fixed << " DOPPLER" << "\t" << (double)raw_meas.iTow;
                 doppler_file_  << "\t" << svid << "\t" << setprecision(3) << measDoppler<<  "\t" 
-                << setprecision(3) << calcDoppler<<"\t"<<measDoppler - myPos.dopplers[svid]<<"\t"<<calcDoppler - myPos.calcDopplers[svid]<<endl; // m
+                << setprecision(3) << calcDoppler<<"\t"<<measDoppler - calcDoppler<<"\t"<<calcDoppler - myPos.calcDopplers[svid]<<endl; // m
                 cout<<"calc: "<<calcDoppler<<"\tmeasured: "<<measDoppler
                 <<"\tError"<<calcDoppler - measDoppler<<"\tDifferential "<< measDoppler - myPos.dopplers[svid]<<endl;
                 myPos.dopplers[svid] = measDoppler;
                 myPos.calcDopplers[svid] = calcDoppler;
+
+            }
+            else if (raw_meas.rawmeasreap[ii].gnssId)
+            {
+                cout<<"Non-GPS Constellation"<<endl;
             }
             else
             {
@@ -82,7 +87,7 @@ void PseudorangeData(ublox::RawMeas raw_meas, double time_stamp) {
             //cout<<myPos.ephemerisExists(raw_meas.rawmeasreap[ii].svid)<<endl;
         }
         data_file_ << std::endl;
-        doppler_file_<<std::endl;
+        
         data_file_ << fixed << "CNO" << "\t" << (signed long)raw_meas.iTow;
         for(int ii=0;ii<raw_meas.numSV; ii++) {
             data_file_  << "\t" << (unsigned int)raw_meas.rawmeasreap[ii].svid

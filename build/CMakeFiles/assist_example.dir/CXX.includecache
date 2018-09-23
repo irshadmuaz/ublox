@@ -22,9 +22,9 @@ boost/thread.hpp
 stdint.h
 ../include/ublox/stdint.h
 
-/home/muaz/Desktop/GPS-PVT/ublox/examples/assist_example.cpp
+/home/muaz/Desktop/ublox/examples/assist_example.cpp
 ublox/ublox.h
-/home/muaz/Desktop/GPS-PVT/ublox/examples/ublox/ublox.h
+/home/muaz/Desktop/ublox/examples/ublox/ublox.h
 iostream
 -
 bitset

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/muaz/Desktop/GPS-PVT/ublox
+CMAKE_SOURCE_DIR = /home/muaz/Desktop/ublox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/muaz/Desktop/GPS-PVT/ublox/build
+CMAKE_BINARY_DIR = /home/muaz/Desktop/ublox/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ublox.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ublox.dir/flags.make
 
 CMakeFiles/ublox.dir/src/ublox.o: CMakeFiles/ublox.dir/flags.make
 CMakeFiles/ublox.dir/src/ublox.o: ../src/ublox.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ublox.dir/src/ublox.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ublox.dir/src/ublox.o -c /home/muaz/Desktop/GPS-PVT/ublox/src/ublox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ublox.dir/src/ublox.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ublox.dir/src/ublox.o -c /home/muaz/Desktop/ublox/src/ublox.cpp
 
 CMakeFiles/ublox.dir/src/ublox.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ublox.dir/src/ublox.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muaz/Desktop/GPS-PVT/ublox/src/ublox.cpp > CMakeFiles/ublox.dir/src/ublox.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muaz/Desktop/ublox/src/ublox.cpp > CMakeFiles/ublox.dir/src/ublox.i
 
 CMakeFiles/ublox.dir/src/ublox.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ublox.dir/src/ublox.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muaz/Desktop/GPS-PVT/ublox/src/ublox.cpp -o CMakeFiles/ublox.dir/src/ublox.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muaz/Desktop/ublox/src/ublox.cpp -o CMakeFiles/ublox.dir/src/ublox.s
 
 CMakeFiles/ublox.dir/src/ublox.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ublox.dir/src/ublox.o.provides.build: CMakeFiles/ublox.dir/src/ublox.
 
 CMakeFiles/ublox.dir/src/calc_position.o: CMakeFiles/ublox.dir/flags.make
 CMakeFiles/ublox.dir/src/calc_position.o: ../src/calc_position.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ublox.dir/src/calc_position.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ublox.dir/src/calc_position.o -c /home/muaz/Desktop/GPS-PVT/ublox/src/calc_position.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ublox.dir/src/calc_position.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ublox.dir/src/calc_position.o -c /home/muaz/Desktop/ublox/src/calc_position.cpp
 
 CMakeFiles/ublox.dir/src/calc_position.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ublox.dir/src/calc_position.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muaz/Desktop/GPS-PVT/ublox/src/calc_position.cpp > CMakeFiles/ublox.dir/src/calc_position.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/muaz/Desktop/ublox/src/calc_position.cpp > CMakeFiles/ublox.dir/src/calc_position.i
 
 CMakeFiles/ublox.dir/src/calc_position.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ublox.dir/src/calc_position.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muaz/Desktop/GPS-PVT/ublox/src/calc_position.cpp -o CMakeFiles/ublox.dir/src/calc_position.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/muaz/Desktop/ublox/src/calc_position.cpp -o CMakeFiles/ublox.dir/src/calc_position.s
 
 CMakeFiles/ublox.dir/src/calc_position.o.requires:
 
@@ -117,7 +117,7 @@ ublox_EXTERNAL_OBJECTS =
 ../lib/libublox.a: CMakeFiles/ublox.dir/src/calc_position.o
 ../lib/libublox.a: CMakeFiles/ublox.dir/build.make
 ../lib/libublox.a: CMakeFiles/ublox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../lib/libublox.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../lib/libublox.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ublox.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ublox.dir/link.txt --verbose=$(VERBOSE)
 
@@ -136,6 +136,6 @@ CMakeFiles/ublox.dir/clean:
 .PHONY : CMakeFiles/ublox.dir/clean
 
 CMakeFiles/ublox.dir/depend:
-	cd /home/muaz/Desktop/GPS-PVT/ublox/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/muaz/Desktop/GPS-PVT/ublox /home/muaz/Desktop/GPS-PVT/ublox /home/muaz/Desktop/GPS-PVT/ublox/build /home/muaz/Desktop/GPS-PVT/ublox/build /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/muaz/Desktop/ublox/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/muaz/Desktop/ublox /home/muaz/Desktop/ublox /home/muaz/Desktop/ublox/build /home/muaz/Desktop/ublox/build /home/muaz/Desktop/ublox/build/CMakeFiles/ublox.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ublox.dir/depend
 

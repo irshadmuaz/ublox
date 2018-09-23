@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/muaz/Desktop/GPS-PVT/ublox/examples/ublox_example.cpp" "/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox_example.dir/examples/ublox_example.o"
+  "/home/muaz/Desktop/ublox/examples/ublox_example.cpp" "/home/muaz/Desktop/ublox/build/CMakeFiles/ublox_example.dir/examples/ublox_example.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox.dir/DependInfo.cmake"
+  "/home/muaz/Desktop/ublox/build/CMakeFiles/ublox.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

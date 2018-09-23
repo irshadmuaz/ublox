@@ -4,10 +4,10 @@
 CMakeFiles/ublox.dir/src/calc_position.o
  ../include/ublox/calc_position.h
  ../include/ublox/ublox_structures.h
- /home/muaz/Desktop/GPS-PVT/ublox/src/calc_position.cpp
+ /home/muaz/Desktop/ublox/src/calc_position.cpp
 CMakeFiles/ublox.dir/src/ublox.o
  ../include/ublox/ublox.h
  ../include/ublox/ublox_structures.h
- /home/muaz/Desktop/GPS-PVT/ublox/src/ublox.cpp
+ /home/muaz/Desktop/ublox/src/ublox.cpp
  /usr/local/include/serial/serial.h
  /usr/local/include/serial/v8stdint.h

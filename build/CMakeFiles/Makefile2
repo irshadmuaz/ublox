@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/muaz/Desktop/GPS-PVT/ublox
+CMAKE_SOURCE_DIR = /home/muaz/Desktop/ublox
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/muaz/Desktop/GPS-PVT/ublox/build
+CMAKE_BINARY_DIR = /home/muaz/Desktop/ublox/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/record_pseudoranges.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/muaz/Desktop/GPS-PVT/ublox/build
 CMakeFiles/record_pseudoranges.dir/all: CMakeFiles/ublox.dir/all
 	$(MAKE) -f CMakeFiles/record_pseudoranges.dir/build.make CMakeFiles/record_pseudoranges.dir/depend
 	$(MAKE) -f CMakeFiles/record_pseudoranges.dir/build.make CMakeFiles/record_pseudoranges.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=3,4 "Built target record_pseudoranges"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=3,4 "Built target record_pseudoranges"
 .PHONY : CMakeFiles/record_pseudoranges.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/record_pseudoranges.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/record_pseudoranges.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/record_pseudoranges.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 .PHONY : CMakeFiles/record_pseudoranges.dir/rule
 
 # Convenience name for target.
@@ -103,14 +103,14 @@ clean: CMakeFiles/record_pseudoranges.dir/clean
 CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -135,7 +135,7 @@ clean: CMakeFiles/uninstall.dir/clean
 CMakeFiles/ublox_example.dir/all: CMakeFiles/ublox.dir/all
 	$(MAKE) -f CMakeFiles/ublox_example.dir/build.make CMakeFiles/ublox_example.dir/depend
 	$(MAKE) -f CMakeFiles/ublox_example.dir/build.make CMakeFiles/ublox_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=8,9 "Built target ublox_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=8,9 "Built target ublox_example"
 .PHONY : CMakeFiles/ublox_example.dir/all
 
 # Include target in all.
@@ -145,9 +145,9 @@ all: CMakeFiles/ublox_example.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ublox_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ublox_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 .PHONY : CMakeFiles/ublox_example.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ clean: CMakeFiles/ublox_example.dir/clean
 CMakeFiles/ublox.dir/all:
 	$(MAKE) -f CMakeFiles/ublox.dir/build.make CMakeFiles/ublox.dir/depend
 	$(MAKE) -f CMakeFiles/ublox.dir/build.make CMakeFiles/ublox.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=5,6,7 "Built target ublox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=5,6,7 "Built target ublox"
 .PHONY : CMakeFiles/ublox.dir/all
 
 # Include target in all.
@@ -182,9 +182,9 @@ all: CMakeFiles/ublox.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ublox.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ublox.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 .PHONY : CMakeFiles/ublox.dir/rule
 
 # Convenience name for target.
@@ -209,7 +209,7 @@ clean: CMakeFiles/ublox.dir/clean
 CMakeFiles/assist_example.dir/all: CMakeFiles/ublox.dir/all
 	$(MAKE) -f CMakeFiles/assist_example.dir/build.make CMakeFiles/assist_example.dir/depend
 	$(MAKE) -f CMakeFiles/assist_example.dir/build.make CMakeFiles/assist_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles --progress-num=1,2 "Built target assist_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/muaz/Desktop/ublox/build/CMakeFiles --progress-num=1,2 "Built target assist_example"
 .PHONY : CMakeFiles/assist_example.dir/all
 
 # Include target in all.
@@ -219,9 +219,9 @@ all: CMakeFiles/assist_example.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/assist_example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/assist_example.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/muaz/Desktop/ublox/build/CMakeFiles 0
 .PHONY : CMakeFiles/assist_example.dir/rule
 
 # Convenience name for target.

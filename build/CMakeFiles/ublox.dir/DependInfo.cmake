@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/muaz/Desktop/GPS-PVT/ublox/src/calc_position.cpp" "/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox.dir/src/calc_position.o"
-  "/home/muaz/Desktop/GPS-PVT/ublox/src/ublox.cpp" "/home/muaz/Desktop/GPS-PVT/ublox/build/CMakeFiles/ublox.dir/src/ublox.o"
+  "/home/muaz/Desktop/ublox/src/calc_position.cpp" "/home/muaz/Desktop/ublox/build/CMakeFiles/ublox.dir/src/calc_position.o"
+  "/home/muaz/Desktop/ublox/src/ublox.cpp" "/home/muaz/Desktop/ublox/build/CMakeFiles/ublox.dir/src/ublox.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
